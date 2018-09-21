@@ -9,6 +9,5 @@ variable "asg_min_instance_count" {}
 variable "asg_desired_instance_count" {}
 
 variable "subnet_id" {}
-variable "ecs_ami_id" {}
 variable "rigor_agent_key" {}
 variable "security_group_id" {}

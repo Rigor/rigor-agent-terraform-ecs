@@ -29,7 +29,7 @@ resource "aws_autoscaling_group" "rigor-agents" {
 # Get the correct AMI here: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html
 # TODO: Auto lookup the latest AMI
 resource "aws_launch_configuration" "rigor-agents" {
-  image_id = "${var.ecs_ami_id}"
+  image_id = "${data.aws_ami.ecs_ami.id}"
   instance_type = "m5.large"
   iam_instance_profile = "${aws_iam_instance_profile.ecs-instance-profile.id}"
   security_groups = ["${var.security_group_id}"]
